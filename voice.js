@@ -1,4 +1,5 @@
 const btn = document.getElementById('btn');
+import { getWeather } from "./api";
 
 const SpeechRecognition = window.SpeechRecognition ||  window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -17,13 +18,23 @@ recognition.onresult = function(event) {
 function read(text){
     var speech = new SpeechSynthesisUtterance();
     speech.text = text;
-    if(text.includes('time'))
+
+    if(text.includes('Hello ')) 
+    speech.text = "Hello Aniketh, How are you doing today";
+
+    if(text.includes('What is your Name')) 
+    speech.text = "My name is Jarvis Your Personal Assitant";
+
+    else if(text.includes('what is time'))
     speech.text = 'It is' + new Date().getHours() + "" + new Date().getMinutes()+" right now"
-    else if(text.includes('My Birthday')) 
+
+    else if(text.includes('Weather ')) 
+    const location = "Hyderabad";
+    const Weather = await getWeather(location);
+    speech.text`The weather for today in ${location} is ${weather} degrees`;
+
+    if(text.includes('My Birthday')) 
     speech.text = "8th September 2001";
-    else if(text.includes('Love me')) 
-    speech.text = "Sorry But i think we are better being Friends";
-    else if(text.includes('What is your Name')) 
-    speech.text = "My name is Aniketh Your Personal Assitant";
+
     window.speechSynthesis.speak(speech);
 }
