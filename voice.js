@@ -28,7 +28,7 @@ function read(text){
     speech.text = 'Hello Aniketh, How are you doing today';
 
     else if(text.includes('what is your name')) 
-    speech.text = 'My name is Jarvis Your Personal Assitant';
+    speech.text = 'My name is Jarvis Your Personal Assistant';
 
     window.speechSynthesis.speak(speech);
 }
