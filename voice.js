@@ -14,9 +14,6 @@ recognition.onresult = function(event) {
     read(text);
 }
 
-function greeting() {
-    alert('Good Day Sir, How are you?')
-}
 
 function read(text){
     var speech = new SpeechSynthesisUtterance();
