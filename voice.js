@@ -18,17 +18,17 @@ function read(text){
     var speech = new SpeechSynthesisUtterance();
     speech.text = text;
 
-    if(text.includes('Hello ')) 
-    speech.text = "Hello Aniketh, How are you doing today";
-
-    else if(text.includes('What is your Name')) 
-    speech.text = "My name is Jarvis Your Personal Assitant";
-
-    else if(text.includes('time'))
+    if(text.includes('time'))
     speech.text = 'It is' + new Date().getHours() + "" + new Date().getMinutes()+" right now"
 
-    else if(text.includes('My Birthday')) 
-    speech.text = "8th September 2001";
+    else if(text.includes('my birthday')) 
+    speech.text = '8th September 2001';
+
+    else if(text.includes('hello')) 
+    speech.text = 'Hello Aniketh, How are you doing today';
+
+    else if(text.includes('what is your name')) 
+    speech.text = 'My name is Jarvis Your Personal Assitant';
 
     window.speechSynthesis.speak(speech);
 }
