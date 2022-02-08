@@ -28,7 +28,7 @@ function read(text){
     else if(text.includes('hello')) 
     speech.text = 'Hello Aniketh, How are you doing today';
     
-    else if(text.includes('good bye')) 
+    else if(text.includes('goodbye')) 
     speech.text = 'Hope we see you soon';
 
     else if(text.includes('what is your name')) 
