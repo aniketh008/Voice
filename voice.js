@@ -14,6 +14,10 @@ recognition.onresult = function(event) {
     read(text);
 }
 
+function greeting() {
+    alert('Good Day Sir, How are you?')
+}
+
 function read(text){
     var speech = new SpeechSynthesisUtterance();
     speech.text = text;
@@ -29,6 +33,9 @@ function read(text){
 
     else if(text.includes('what is your name')) 
     speech.text = 'My name is Jarvis Your Personal Assistant';
-
+    
+    else if(text.includes('open youtube')) 
+        window.open('https://www.youtube.com/')
+    
     window.speechSynthesis.speak(speech);
 }
