@@ -32,7 +32,10 @@ function read(text){
     speech.text = 'My name is Jarvis Your Personal Assistant';
     
     else if(text.includes('open youtube')) 
-        SpeechRecognition.open('https://www.youtube.com/')
+    window.open('https://www.youtube.com/')
+    
+    else if(text.includes('Good Bye')) 
+    speech.text = 'Hope we see you soon';
     
     
     window.speechSynthesis.speak(speech);
