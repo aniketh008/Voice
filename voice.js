@@ -27,6 +27,9 @@ function read(text){
 
     else if(text.includes('hello')) 
     speech.text = 'Hello Aniketh, How are you doing today';
+    
+    else if(text.includes('Good Bye')) 
+    speech.text = 'Hope we see you soon';
 
     else if(text.includes('what is your name')) 
     speech.text = 'My name is Jarvis Your Personal Assistant';
@@ -34,8 +37,7 @@ function read(text){
     else if(text.includes('open youtube')) 
     window.open('https://www.youtube.com/')
     
-    else if(text.includes('Good Bye')) 
-    speech.text = 'Hope we see you soon';
+    
     
     
     window.speechSynthesis.speak(speech);
